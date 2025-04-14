@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>WebChat</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#"><img id="fotoMenu" src="./img/icon_menu.png" alt="Botão menu" /></a>
+        <p><b>GABRIEL CASAGRANDE</b></p>
+        <img id="fotoPerfil" src="./img/foto_perfil.jpg" alt="foto de perfil" />
+    </header>
+
+    <div class="corpo">
+        <aside class="Lateral">
+            <a href="#"><img src="./img/icon_mais.png" alt="Botao adicionar" /></a>
+            <a href="#"><img src="./img/icon_ajuda.png" alt="Botão ajuda" /></a>
+        </aside>
+
+        <div class="caixaChat">
+            <div class="listaContatos">
+                <div class="newChat">
+                    <h1>CHAT</h1>
+                    <button>Novo</button>
+                </div>
+                    <hr></hr>
+                <div class="pesq">
+                    <input type="text" id="pesquisar" placeholder="Pesquisar..." />
+                    <a href="#"></a>
+                        <img src="./img/icon_lupa.png" alt="Botão pesquisar" />
+                    </a>
+                </div>
+                    
+                        <div class="contato online">
+                            <!-- <img src="./img/foto_perfil03.jfif" alt=""> -->
+                            <h1 class="nome">João</h1>
+                            <hr></hr>
+                            <div class="preview-on">
+                                <p >Oi, tudo bem?</p>
+                                <p>5 min</p>
+                            </div>
+                        </div>
+                        <div class="contato offline">
+                            <!-- <img src="./img/foto_perfil04.jfif" alt=""> -->
+                            <h1 class="nome">Maria</h1>
+                            <hr></hr>
+                            <div class="preview-off">
+                                <p class="preview">Te mando depois.</p>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="areaConversa">
+                <div class="topoConversa">
+                    <img src="./img/foto_perfil02.png" alt="">
+                    <p><b>João</b></p>
+                </div>
+
+
+                <div class="mensagens">
+                    <div class="mensagem recebida">Oi, tudo bem?</div>
+                    <div class="mensagem enviada">Tudo sim, e você?</div>
+                </div>
+
+                <div class="campoMensagem">
+                    <input type="text" id="inputMensagem" placeholder="Digite sua mensagem..." />
+                    <button id="btnEnviar">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Direitos reservados pro Gabriel Pica Grossa BR</p>
+    </footer>
+</body>
+</html>
+
