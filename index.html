@@ -3,62 +3,131 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>WebChat</title>
 </head>
 <body>
+
+    <!-- CABEÇALHO -->
     <header class="cabecalho">
         <a href="#"><img id="fotoMenu" src="./img/icon_menu.png" alt="Botão menu" /></a>
         <p><b>GABRIEL CASAGRANDE</b></p>
         <img id="fotoPerfil" src="./img/foto_perfil.jpg" alt="foto de perfil" />
     </header>
 
+    <!-- CORPO -->
     <div class="corpo">
         <aside class="Lateral">
-            <a href="#"><img src="./img/icon_mais.png" alt="Botao adicionar" /></a>
-            <a href="#"><img src="./img/icon_ajuda.png" alt="Botão ajuda" /></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#iconNew"><img src="./img/icon_mais.png" alt="Botão adicionar" /></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#iconSup"><img src="./img/icon_ajuda.png" alt="Botão ajuda" /></a>
         </aside>
 
+        <!-- BOOTSTRAP -->
+         <!-- POPUP AJUDA -->
+        <div class="modal fade" id="iconSup" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+        
+                <div class="modal-header">
+                  <h5 class="modal-title" id="meuModalLabel">Ajuda Tela Chat</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+        
+                <div class="modal-body">
+                  Informando que essa tela é so para um chat que envia mensagem!! Não há diversão. 😊
+                </div>
+        
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+
+        <!-- POPUP CRIAÇÃO DE NOVOS NUMEROS -->
+        <div class="modal fade" id="iconNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+        
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Novo Número</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+        
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nome do Contato: </label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Contato: </label>
+                                <input class="form-control" id="exampleFormControlSelect1" placeholder="(99) 99999-9999">
+                            </input>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect2">Descrição contato</label>
+                                <select multiple class="form-control" id="exampleFormControlSelect2">
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!--  CAIXA GERAL DE CHAT, AREA DE CONVERSA E CONTATOS-->
         <div class="caixaChat">
             <div class="listaContatos">
+                <!-- BOTAO DE NOVO CONTATO -->
                 <div class="newChat">
                     <h1>CHAT</h1>
-                    <button>Novo</button>
+                    <button data-bs-toggle="modal" data-bs-target="#iconNew">Novo</button>
                 </div>
                     <hr></hr>
+                <!-- PESQUISA:INPUT E BUTTON -->
                 <div class="pesq">
                     <input type="text" id="pesquisar" placeholder="Pesquisar..." />
-                    <a href="#"></a>
+                    <a href="#">
                         <img src="./img/icon_lupa.png" alt="Botão pesquisar" />
                     </a>
                 </div>
-                    
-                        <div class="contato online">
-                            <!-- <img src="./img/foto_perfil03.jfif" alt=""> -->
-                            <h1 class="nome">João</h1>
-                            <hr></hr>
-                            <div class="preview-on">
-                                <p >Oi, tudo bem?</p>
-                                <p>5 min</p>
-                            </div>
-                        </div>
-                        <div class="contato offline">
-                            <!-- <img src="./img/foto_perfil04.jfif" alt=""> -->
-                            <h1 class="nome">Maria</h1>
-                            <hr></hr>
-                            <div class="preview-off">
-                                <p class="preview">Te mando depois.</p>
-                            </div>
-                        </div>
-            </div>
 
+                <!-- CONTATOS DIVIDIOS POR ONLINE E OFFLINE -->
+                <div class="contato online">
+                    <!-- <img src="./img/foto_perfil03.jfif" alt=""> -->
+                    <h1 class="nome">João</h1>
+                    <hr></hr>
+                    <div class="preview-on">
+                        <p >Oi, tudo bem?</p>
+                        <p>5 min</p>
+                    </div>
+                </div>
+                <div class="contato offline">
+                    <!-- <img src="./img/foto_perfil04.jfif" alt=""> -->
+                    <h1 class="nome">Maria</h1>
+                    <hr></hr>
+                    <div class="preview-off">
+                        <p class="preview">Te mando depois.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AREA CONVERSA -->
             <div class="areaConversa">
                 <div class="topoConversa">
                     <img src="./img/foto_perfil02.png" alt="">
                     <p><b>João</b></p>
                 </div>
-
 
                 <div class="mensagens">
                     <div class="mensagem recebida">Oi, tudo bem?</div>
@@ -70,12 +139,16 @@
                     <button id="btnEnviar">Enviar</button>
                 </div>
             </div>
+
         </div>
+
     </div>
 
     <footer>
         <p>Direitos reservados pro Gabriel Pica Grossa BR</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
 </body>
 </html>
-
